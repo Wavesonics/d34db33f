@@ -1,4 +1,6 @@
+printRaw("Test Program, type something:");
+
 var line = readLine();
-print(line);
+print("You entered: " + line);
 
 return 0;

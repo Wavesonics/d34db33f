@@ -1,0 +1,19 @@
+print("-= d34db33f 05 =-");
+var running = true;
+while(running)
+{
+	printRaw("/");
+	var line = readLine();
+	if(line == "exit")
+	{
+		running = false;
+		print("Good bye.");
+	}
+	else
+	{
+		var status = run(line);
+		print(status);
+	}
+}
+
+return 0;
