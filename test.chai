@@ -1,0 +1,4 @@
+var line = readLine();
+print(line);
+
+return 0;
