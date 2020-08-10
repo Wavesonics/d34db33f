@@ -22,6 +22,8 @@ ChaiProgram::ChaiProgram(const std::string &programPath) : path(programPath)
 	chai.add(chaiscript::fun(&ChaiProgram::readLine, this), "readLine");
 	chai.add(chaiscript::fun(&execute), "execute");
 	chai.add(chaiscript::fun(&ChaiProgram::fileExists, this), "fileExists");
+	chai.add(chaiscript::fun(&ChaiProgram::srand, this), "srand");
+	chai.add(chaiscript::fun(&ChaiProgram::rand, this), "rand");
 }
 
 string ChaiProgram::readLine()
@@ -80,6 +82,16 @@ int ChaiProgram::run()
 void ChaiProgram::printRaw(const string& str)
 {
 	cout << str;
+}
+
+void ChaiProgram::srand(int seed)
+{
+	std::srand(seed);
+}
+
+int ChaiProgram::rand()
+{
+	return std::rand();
 }
 
 int deadbeef::execute(const string& str)

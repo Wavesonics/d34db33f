@@ -3,4 +3,7 @@ printRaw("Test Program, type something:");
 var input = readLine();
 print("You entered: ${input}");
 
+var r = rand()
+print("Rand: ${r}")
+
 return 0;

@@ -22,6 +22,8 @@ namespace deadbeef
 		std::string readLine();
 		bool fileExists(const std::string& filePath);
 		int run();
+		void srand(int seed);
+		int rand();
 	};
 
 	int execute(const std::string& path);
