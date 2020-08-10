@@ -2,28 +2,29 @@
 // Created by Adam on 8/9/2020.
 //
 
-#ifndef D34DB33F_CHAIOS_H
-#define D34DB33F_CHAIOS_H
+#ifndef D34DB33F_CHAIPROGRAM_H
+#define D34DB33F_CHAIPROGRAM_H
 
 
 #include <chaiscript/chaiscript.hpp>
 
-namespace deedbeef
+namespace deadbeef
 {
-	class ChaiOs
+	class ChaiProgram
 	{
 	private:
-		const std::string OS_PATH = "os.chai";
+		const std::string path;
 		chaiscript::ChaiScript chai;
 	public:
-		ChaiOs();
+		ChaiProgram(std::string path);
 
-		int boot();
 		void printRaw(const std::string& str);
 		std::string readLine();
 		bool fileExists(const std::string& path);
-		int run(const std::string& path);
+		int run();
 	};
+
+	int execute(const std::string& path);
 }
 
-#endif //D34DB33F_CHAIOS_H
+#endif //D34DB33F_CHAIPROGRAM_H

@@ -1,6 +1,6 @@
 printRaw("Test Program, type something:");
 
-var line = readLine();
-print("You entered: " + line);
+var input = readLine();
+print("You entered: ${input}");
 
 return 0;

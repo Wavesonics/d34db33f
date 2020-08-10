@@ -3,7 +3,7 @@ project(d34db33f)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(d34db33f src/main.cpp src/ChaiOs.cpp src/ChaiOs.h)
+add_executable(d34db33f src/main.cpp src/ChaiProgram.cpp src/ChaiProgram.h)
 
 include(cmake/CPM.cmake)
 

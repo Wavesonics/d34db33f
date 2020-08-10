@@ -1,12 +1,14 @@
 #include <iostream>
 #include <chaiscript/chaiscript.hpp>
-#include "ChaiOs.h"
+#include "ChaiProgram.h"
 
 
 int main()
 {
-	deedbeef::ChaiOs os;
-	int exitCode = os.boot();
+	const std::string OS_PATH = "os.chai";
+
+	deadbeef::ChaiProgram os(OS_PATH);
+	int exitCode = os.run();
 
 	return exitCode;
 }

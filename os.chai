@@ -4,6 +4,7 @@ while(running)
 {
 	printRaw("/");
 	var line = readLine();
+	
 	if(line == "exit")
 	{
 		running = false;
@@ -11,8 +12,22 @@ while(running)
 	}
 	else
 	{
-		var status = run(line);
-		print(status);
+		var status = execute(line);
+		
+		if(status != 0)
+		{
+			switch(status)
+			{
+				case (-1) {
+					print("Program not found");
+					break;
+				}
+				default {
+					print("Program returned error");
+					break;
+				}
+			}
+		}
 	}
 }
 
