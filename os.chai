@@ -10,6 +10,13 @@ while(running)
 		running = false;
 		print("Good bye.");
 	}
+	else if(line == "help")
+	{
+		print("HELP");
+		print("exit - Quite d34db33f 05");
+		print("help - This help function");
+		print("[program path] - Example: test.chai");
+	}
 	else
 	{
 		var status = execute(line);

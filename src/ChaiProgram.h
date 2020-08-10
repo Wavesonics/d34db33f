@@ -16,11 +16,11 @@ namespace deadbeef
 		const std::string path;
 		chaiscript::ChaiScript chai;
 	public:
-		ChaiProgram(std::string path);
+		ChaiProgram(const std::string& programPath);
 
 		void printRaw(const std::string& str);
 		std::string readLine();
-		bool fileExists(const std::string& path);
+		bool fileExists(const std::string& filePath);
 		int run();
 	};
 

@@ -9,7 +9,7 @@
 using namespace std;
 using namespace deadbeef;
 
-ChaiProgram::ChaiProgram(std::string _path) : path(std::move(_path))
+ChaiProgram::ChaiProgram(const std::string &programPath) : path(programPath)
 {
 	chai.add(chaiscript::fun(&ChaiProgram::printRaw, this), "printRaw");
 	chai.add(chaiscript::fun(&ChaiProgram::readLine, this), "readLine");
@@ -25,8 +25,8 @@ string ChaiProgram::readLine()
 	return line;
 }
 
-bool ChaiProgram::fileExists(const string& path) {
-	ifstream f(path.c_str());
+bool ChaiProgram::fileExists(const string& filePath) {
+	ifstream f(filePath.c_str());
 	return f.good();
 }
 
