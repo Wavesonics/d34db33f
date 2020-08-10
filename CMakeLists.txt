@@ -23,4 +23,20 @@ if (chaiscript_ADDED)
             )
 endif()
 
-target_link_libraries(d34db33f chaiscript)
+CPMAddPackage(
+        NAME chaiscriptextras
+        GIT_REPOSITORY https://github.com/ChaiScript/ChaiScript_Extras.git
+        VERSION 1.0.1
+        DOWNLOAD_ONLY YES
+)
+
+if (chaiscriptextras_ADDED)
+    add_library(chaiscriptextras INTERFACE)
+
+    target_include_directories(chaiscriptextras
+            INTERFACE
+            $<BUILD_INTERFACE:${chaiscriptextras_SOURCE_DIR}/include>
+            )
+endif()
+
+target_link_libraries(d34db33f chaiscript chaiscriptextras)

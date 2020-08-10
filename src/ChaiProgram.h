@@ -16,7 +16,7 @@ namespace deadbeef
 		const std::string path;
 		chaiscript::ChaiScript chai;
 	public:
-		ChaiProgram(const std::string& programPath);
+		explicit ChaiProgram(const std::string& programPath);
 
 		void printRaw(const std::string& str);
 		std::string readLine();

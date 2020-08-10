@@ -4,13 +4,20 @@
 
 #include "ChaiProgram.h"
 #include <iostream>
-#include <utility>
+#include "chaiscript/extras/string_methods.hpp"
+#include "chaiscript/extras/math.hpp"
 
 using namespace std;
 using namespace deadbeef;
 
 ChaiProgram::ChaiProgram(const std::string &programPath) : path(programPath)
 {
+	auto mathlib = chaiscript::extras::math::bootstrap();
+	chai.add(mathlib);
+
+	auto stringlib = chaiscript::extras::string_methods::bootstrap();
+	chai.add(stringlib);
+
 	chai.add(chaiscript::fun(&ChaiProgram::printRaw, this), "printRaw");
 	chai.add(chaiscript::fun(&ChaiProgram::readLine, this), "readLine");
 	chai.add(chaiscript::fun(&execute), "execute");
